@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title> Final project</title>
+</head>
+<body>
+  <h1> Change the object</h1>
+    <select id="background" name="cssProperty">
+        <option value="green"> green</option>
+        <option value="blue"> blue</option>
+        <option value="red"> red</option>
+        <option value= "black"> black</option>
+    </select>
+    <select id="width" name="cssProperty">
+        <option value="100"> 100px</option>
+        <option value="200"> 200px</option>
+        <option value="300"> 300px</option>
+        <option value="400"> 400px</option>
+    </select>
+    <select id="height" name="cssProperty">
+        <option value="100"> 100px</option>
+        <option value="200"> 200px</option>
+        <option value="300"> 300px</option>
+        <option value="400"> 400px</option>
+    </select>
+    <button id="set"> set</button> 
+     <br> <br> 
+    <div id="modify" style="background: red; width: 200px; height: 100px"> </div>
+ <script type="text/javascript">
+    let elements= document.getElementsByName('cssProperty');
+    let div = document.getElementById('modify');
+     function set(){
+        for(let i=0; i<elements.length; i++){
+            let cssProperty = elements[i].getAttribute('id');
+            let cssValue = elements[i].value;
+            div.style[cssProperty]= cssValue;
+        } 
+     }
+     document.getElementById('set').addEventListener('click',set);
+ </script>
+</body>
+</html>
